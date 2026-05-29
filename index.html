@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stefanie Nicole Navarro — VA & Operations Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Reset & Root ─────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream:   #FAF8F3;
+  --paper:   #F3F0E8;
+  --ink:     #1C1917;
+  --ink-2:   #44403C;
+  --ink-3:   #78716C;
+  --gold:    #B5813A;
+  --gold-l:  #E8D5B0;
+  --gold-xl: #FBF5E8;
+  --teal:    #2A6B5F;
+  --teal-l:  #D4EAE6;
+  --coral:   #C05840;
+  --coral-l: #F5DDD8;
+  --border:  rgba(28,25,23,0.10);
+  --border-md: rgba(28,25,23,0.18);
+  --r: 6px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── Noise Texture Overlay ───────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── Nav ─────────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,248,243,0.90);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 56px;
+}
+
+.nav-mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 4rem;
+}
+
+.hero-left { padding-right: 4rem; }
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-name em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.hero-bio {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink-2);
+  max-width: 460px;
+  margin-bottom: 2.25rem;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 0.5px solid;
+  letter-spacing: 0.04em;
+}
+
+.badge-gold  { background: var(--gold-xl);  color: #7A5520; border-color: var(--gold-l); }
+.badge-teal  { background: var(--teal-l);   color: var(--teal); border-color: #A8D4CE; }
+.badge-ink   { background: var(--paper);    color: var(--ink-2); border-color: var(--border-md); }
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--r);
+  background: var(--ink);
+  color: var(--cream);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.03em;
+}
+
+.btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
+
+.btn-outline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 12px 22px;
+  border-radius: var(--r);
+  background: transparent;
+  color: var(--ink-2);
+  border: 1px solid var(--border-md);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+
+/* Hero right — stat cards */
+.hero-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stat-card {
+  background: white;
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 12px rgba(28,25,23,0.05);
+  animation: slideIn 0.6s ease both;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; margin-left: 0; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; margin-left: 2rem; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; margin-left: 0; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; margin-left: 2rem; }
+
+.stat-ico {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.ico-gold  { background: var(--gold-xl); }
+.ico-teal  { background: var(--teal-l); }
+.ico-coral { background: var(--coral-l); }
+.ico-paper { background: var(--paper); }
+
+.stat-val  { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--ink); line-height: 1; }
+.stat-lbl  { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+
+/* ── Section Wrapper ──────────────────────────────────────── */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
+.section-head {
+  margin-bottom: 3rem;
+}
+
+.sec-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.sec-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.sec-title em { font-style: italic; color: var(--gold); }
+
+/* ── SERVICES SECTION ─────────────────────────────────────── */
+#services { background: var(--paper); }
+#services .section { max-width: 1200px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+.service-card {
+  background: white;
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(28,25,23,0.08);
+}
+
+.service-card.active .service-header { border-bottom: 2px solid var(--gold); }
+
+.service-header {
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.svc-ico {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.svc-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.svc-desc {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+.service-body { padding: 20px 24px; }
+
+.example-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.example-box {
+  background: var(--gold-xl);
+  border: 0.5px solid var(--gold-l);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.example-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.example-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.example-steps li {
+  font-size: 11.5px;
+  color: var(--ink-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.5;
+}
+
+.example-steps li::before {
+  content: '✓';
+  color: var(--gold);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.result-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--teal-l);
+  color: var(--teal);
+  border: 0.5px solid #A8D4CE;
+  font-weight: 400;
+}
+
+/* ── EXPERIENCE SECTION ───────────────────────────────────── */
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border-md);
+}
+
+.exp-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+  padding-left: 2rem;
+}
+
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -1.95rem;
+  top: 7px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--gold);
+}
+
+.exp-item:last-child { padding-bottom: 0; }
+
+.exp-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.exp-role {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.exp-co {
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+
+.exp-pts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.exp-pts li {
+  font-size: 13px;
+  color: var(--ink-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+.exp-pts li::before {
+  content: '—';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* ── TOOLS SECTION ────────────────────────────────────────── */
+#tools { background: var(--paper); }
+
+.tools-cats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.tool-cat {
+  background: white;
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.tool-cat-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.tool-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tool-pill {
+  font-size: 11.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--paper);
+  border: 0.5px solid var(--border-md);
+  color: var(--ink-2);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.tool-pill:hover { background: var(--gold-xl); border-color: var(--gold-l); }
+.tool-pill.ai { background: var(--teal-l); border-color: #A8D4CE; color: var(--teal); font-weight: 500; }
+
+/* ── CONTACT / FOOTER ─────────────────────────────────────── */
+#contact {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+#contact .section { padding: 5rem 2.5rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact-left .sec-eyebrow { color: var(--gold-l); }
+.contact-left .sec-eyebrow::before { background: var(--gold-l); }
+
+.contact-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.contact-title em { color: var(--gold-l); font-style: italic; }
+
+.contact-note {
+  font-size: 14px;
+  color: rgba(250,248,243,0.65);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 0.5px solid rgba(250,248,243,0.12);
+  background: rgba(250,248,243,0.05);
+  transition: background 0.2s, border-color 0.2s;
+  color: var(--cream);
+}
+
+.contact-link:hover {
+  background: rgba(250,248,243,0.10);
+  border-color: rgba(181,129,58,0.5);
+}
+
+.contact-link-ico {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(181,129,58,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.contact-link-label { font-size: 11px; color: rgba(250,248,243,0.5); margin-bottom: 1px; }
+.contact-link-val   { font-size: 13px; font-weight: 500; }
+
+.contact-right {
+  background: rgba(250,248,243,0.05);
+  border: 0.5px solid rgba(250,248,243,0.10);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.avail-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avail-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4ADE80;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+  50%      { opacity: 0.8; box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+}
+
+.platform-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.platform-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(250,248,243,0.06);
+  border: 0.5px solid rgba(250,248,243,0.08);
+  font-size: 13px;
+}
+
+.platform-name { color: var(--cream); }
+.platform-status { font-family: 'DM Mono', monospace; font-size: 10px; color: #4ADE80; }
+
+.footer-note {
+  font-size: 11px;
+  color: rgba(250,248,243,0.30);
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 0.5px solid rgba(250,248,243,0.08);
+  margin-top: 3rem;
+  line-height: 1.7;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fadeUp 0.6s ease both; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; min-height: auto; gap: 3rem; }
+  .hero-left { padding-right: 0; }
+  .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-card { margin-left: 0 !important; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .section { padding: 3.5rem 1.5rem; }
+  nav { padding: 0 1.5rem; }
+  .nav-links { gap: 1.25rem; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .hero-right { grid-template-columns: 1fr; }
+  .nav-mono { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-mono">stefanie-navarro.github.io</span>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div class="hero-left fade-up">
+      <div class="hero-eyebrow">Available for hire · Philippines UTC+8</div>
+      <h1 class="hero-name">Stefanie<br><em>Nicole</em><br>Navarro</h1>
+      <p class="hero-title">Virtual Assistant &amp; Operations Specialist</p>
+      <p class="hero-bio">
+        5+ years of remote operations experience — from high-volume data management and CRM workflows to admin support and AI-assisted productivity. I help businesses run cleaner, faster, and with fewer bottlenecks.
+      </p>
+      <div class="hero-badges">
+        <span class="badge badge-gold">5+ Years Remote</span>
+        <span class="badge badge-teal">Claude + ChatGPT</span>
+        <span class="badge badge-ink">BS Computer Science</span>
+        <span class="badge badge-ink">Full-time / Part-time</span>
+      </div>
+      <div class="hero-cta">
+        <a href="mailto:stefnvrr@gmail.com" class="btn-primary">✉ Hire Me</a>
+        <a href="https://www.upwork.com/freelancers/~015640ed57ceca32e8" target="_blank" class="btn-outline">↗ View Upwork</a>
+        <a href="https://v2.onlinejobs.ph/jobseekers/info/1778834" target="_blank" class="btn-outline">↗ OnlineJobs.ph</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-ico ico-gold">📋</div>
+        <div><div class="stat-val">5+</div><div class="stat-lbl">Years remote experience</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-ico ico-teal">🎯</div>
+        <div><div class="stat-val">4</div><div class="stat-lbl">Companies &amp; roles</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-ico ico-coral">🤖</div>
+        <div><div class="stat-val">AI</div><div class="stat-lbl">Claude + ChatGPT powered</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-ico ico-paper">⚡</div>
+        <div><div class="stat-val">10+</div><div class="stat-lbl">Tools in daily use</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-eyebrow">What I do</div>
+      <h2 class="sec-title">Services I <em>Offer</em></h2>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- 1 -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="svc-ico ico-gold">📊</div>
+          <div>
+            <div class="svc-name">Data Entry &amp; Data Management</div>
+            <div class="svc-desc">High-accuracy entry, validation, cleaning, and structuring of data across platforms and spreadsheets.</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="example-label">Sample project</div>
+          <div class="example-box">
+            <div class="example-title">Spreadsheet Data Organization</div>
+            <ul class="example-steps">
+              <li>Received 500+ raw customer records in an unstructured CSV</li>
+              <li>Cleaned duplicate entries and corrected formatting errors</li>
+              <li>Organized records by category with consistent naming conventions</li>
+              <li>Verified accuracy of every field before final delivery</li>
+            </ul>
+          </div>
+          <span class="result-chip">✓ Delivered clean, report-ready spreadsheet on time</span>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="svc-ico ico-teal">🍽️</div>
+          <div>
+            <div class="svc-name">Menu Transcription &amp; Uploads</div>
+            <div class="svc-desc">Transfer restaurant menus from any format (PDF, handwritten, image) into structured online platforms.</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="example-label">Sample project</div>
+          <div class="example-box">
+            <div class="example-title">Restaurant Menu Transcription</div>
+            <ul class="example-steps">
+              <li>Transferred menu data from PDF files into an online ordering platform</li>
+              <li>Entered items, prices, descriptions, categories, and modifiers accurately</li>
+              <li>Checked spelling, formatting consistency, and category structure</li>
+              <li>Performed QA review before submission to the client</li>
+            </ul>
+          </div>
+          <span class="result-chip">✓ 3 years of hands-on transcription at TaskUs scale</span>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="svc-ico ico-paper">🔍</div>
+          <div>
+            <div class="svc-name">Web Research &amp; Data Collection</div>
+            <div class="svc-desc">Research businesses, contacts, competitors, and market data — delivered in clean, organized spreadsheets.</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="example-label">Sample project</div>
+          <div class="example-box">
+            <div class="example-title">Business Contact Research</div>
+            <ul class="example-steps">
+              <li>Researched 80+ company profiles from websites and directories</li>
+              <li>Gathered contact names, emails, phone numbers, and locations</li>
+              <li>Maintained accurate, deduplicated records in Google Sheets</li>
+              <li>Organized findings by industry and region for easy filtering</li>
+            </ul>
+          </div>
+          <span class="result-chip">✓ Organized and accurate — delivered within deadline</span>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="svc-ico ico-gold">🎨</div>
+          <div>
+            <div class="svc-name">Basic Graphic Design for Menus</div>
+            <div class="svc-desc">Clean, professional menu layouts for restaurants and food businesses using Canva.</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="example-label">Sample project</div>
+          <div class="example-box">
+            <div class="example-title">Restaurant Menu Design (Canva)</div>
+            <ul class="example-steps">
+              <li>Designed a clean, branded menu layout for a food business client</li>
+              <li>Organized sections, adjusted fonts, spacing, and color scheme</li>
+              <li>Prepared print-ready and social media versions (Instagram, Facebook)</li>
+              <li>Delivered editable Canva file for future updates</li>
+            </ul>
+          </div>
+          <span class="result-chip">✓ Print-ready + social media formats delivered</span>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="svc-ico ico-coral">📋</div>
+          <div>
+            <div class="svc-name">Spreadsheet Organization &amp; Formatting</div>
+            <div class="svc-desc">Google Sheets and Excel cleanup, formatting, formulas, and report structuring.</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="example-label">Sample project</div>
+          <div class="example-box">
+            <div class="example-title">PDF to Excel / Google Sheets Conversion</div>
+            <ul class="example-steps">
+              <li>Extracted tabular data from multi-page PDFs into structured spreadsheets</li>
+              <li>Applied consistent formatting, column headers, and data types</li>
+              <li>Added basic formulas for totals, averages, and category summaries</li>
+              <li>Delivered a clean, filterable sheet ready for client reporting</li>
+            </ul>
+          </div>
+          <span class="result-chip">✓ Formatted, formula-ready, and client-ready</span>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="service-card">
+        <div class="service-header">
+          <div class="svc-ico ico-teal">🤖</div>
+          <div>
+            <div class="svc-name">AI-Assisted Admin &amp; Operations Support</div>
+            <div class="svc-desc">Faster admin work using Claude and ChatGPT — drafting, summarizing, SOPs, and workflow setup.</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="example-label">Sample project</div>
+          <div class="example-box">
+            <div class="example-title">Operations Dashboard (Live on GitHub)</div>
+            <ul class="example-steps">
+              <li>Built an interactive weekly ops dashboard using Claude + HTML</li>
+              <li>Tracks tasks by priority, team status, and project progress</li>
+              <li>Includes one-click report export and live stat updates</li>
+              <li>Hosted on GitHub Pages — available as a live demo for clients</li>
+            </ul>
+          </div>
+          <span class="result-chip">✓ Live demo available · Built with Claude AI</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-eyebrow">Work history</div>
+      <h2 class="sec-title">5+ Years of <em>Remote</em> Experience</h2>
+    </div>
+
+    <div class="exp-timeline">
+
+      <div class="exp-item fade-up">
+        <div class="exp-date">OCT 2021 — PRESENT</div>
+        <div class="exp-role">Operations Associate</div>
+        <div class="exp-co">Woflow Inc. · Remote</div>
+        <ul class="exp-pts">
+          <li>Coordinated with clients through internal tools regarding necessary updates and workflow alignment</li>
+          <li>Provided escalation feedback to clients to ensure alignment with company style guide</li>
+          <li>Coordinated with remote freelancers and operations teams for timely task completion</li>
+          <li>Maintained high-accuracy operational records and spreadsheets for daily workflow tracking</li>
+          <li>Used Claude and ChatGPT to streamline documentation and reporting tasks</li>
+        </ul>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-date">NOV 2018 — AUG 2021</div>
+        <div class="exp-role">Menu Transcription Specialist</div>
+        <div class="exp-co">TaskUs · Remote</div>
+        <ul class="exp-pts">
+          <li>Transcribed menu data from handwritten, printed, and digital sources into structured formats</li>
+          <li>Verified accuracy of items, prices, and descriptions against source materials</li>
+          <li>Maintained consistency and quality across high-volume tasks with strict turnaround times</li>
+        </ul>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-date">MAR 2018 — NOV 2018</div>
+        <div class="exp-role">Image Annotator</div>
+        <div class="exp-co">TaskUs · Remote</div>
+        <ul class="exp-pts">
+          <li>Labeled and classified image datasets for AI training pipelines</li>
+          <li>Ensured accuracy and consistency in visual data tagging across thousands of records</li>
+        </ul>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-date">MAY 2015 — DEC 2017</div>
+        <div class="exp-role">Data Entry Specialist</div>
+        <div class="exp-co">Scorp Philippines Inc. · Remote</div>
+        <ul class="exp-pts">
+          <li>Accurately entered and maintained high-volume customer and account records</li>
+          <li>Performed data validation, error detection, and correction for record consistency</li>
+          <li>Managed sensitive information in compliance with data privacy standards</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-eyebrow">Tech stack</div>
+      <h2 class="sec-title">Tools I <em>Work With</em></h2>
+    </div>
+    <div class="tools-cats">
+
+      <div class="tool-cat">
+        <div class="tool-cat-name">Operations &amp; Admin</div>
+        <div class="tool-pills">
+          <span class="tool-pill">Google Docs</span>
+          <span class="tool-pill">Google Sheets</span>
+          <span class="tool-pill">Google Drive</span>
+          <span class="tool-pill">Microsoft Excel</span>
+          <span class="tool-pill">Microsoft Word</span>
+        </div>
+      </div>
+
+      <div class="tool-cat">
+        <div class="tool-cat-name">Project &amp; Workflow</div>
+        <div class="tool-pills">
+          <span class="tool-pill">Asana</span>
+          <span class="tool-pill">Slack</span>
+          <span class="tool-pill">Zoom</span>
+          <span class="tool-pill">Loom</span>
+          <span class="tool-pill">Discord</span>
+          <span class="tool-pill">Google Meet</span>
+        </div>
+      </div>
+
+      <div class="tool-cat">
+        <div class="tool-cat-name">CRM &amp; Data</div>
+        <div class="tool-pills">
+          <span class="tool-pill">Salesforce</span>
+          <span class="tool-pill">Data Validation</span>
+          <span class="tool-pill">Spreadsheet Mgmt</span>
+        </div>
+      </div>
+
+      <div class="tool-cat">
+        <div class="tool-cat-name">AI &amp; Productivity</div>
+        <div class="tool-pills">
+          <span class="tool-pill ai">Claude (Anthropic)</span>
+          <span class="tool-pill ai">ChatGPT</span>
+          <span class="tool-pill">AI-assisted workflows</span>
+        </div>
+      </div>
+
+      <div class="tool-cat">
+        <div class="tool-cat-name">Design &amp; Content</div>
+        <div class="tool-pills">
+          <span class="tool-pill">Canva</span>
+          <span class="tool-pill">CapCut</span>
+          <span class="tool-pill">Lightroom (Basic)</span>
+        </div>
+      </div>
+
+      <div class="tool-cat">
+        <div class="tool-cat-name">Tech &amp; Portfolio</div>
+        <div class="tool-pills">
+          <span class="tool-pill">GitHub Pages</span>
+          <span class="tool-pill">HTML / CSS</span>
+          <span class="tool-pill">VS Code</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section">
+    <div class="contact-grid">
+
+      <div class="contact-left">
+        <div class="sec-eyebrow">Let's work together</div>
+        <h2 class="contact-title">Ready to help your<br>business <em>grow.</em></h2>
+        <p class="contact-note">
+          Looking for a reliable, detail-oriented VA with 5+ years of remote experience? I'm available for freelance projects, part-time, and full-time remote roles.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:stefnvrr@gmail.com" class="contact-link">
+            <div class="contact-link-ico">✉</div>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-val">stefnvrr@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/stefanie-navarro/" target="_blank" class="contact-link">
+            <div class="contact-link-ico">in</div>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-val">linkedin.com/in/stefanie-navarro</div>
+            </div>
+          </a>
+          <a href="https://www.upwork.com/freelancers/~015640ed57ceca32e8" target="_blank" class="contact-link">
+            <div class="contact-link-ico">↗</div>
+            <div>
+              <div class="contact-link-label">Upwork</div>
+              <div class="contact-link-val">View my Upwork profile</div>
+            </div>
+          </a>
+          <a href="https://v2.onlinejobs.ph/jobseekers/info/1778834" target="_blank" class="contact-link">
+            <div class="contact-link-ico">🇵🇭</div>
+            <div>
+              <div class="contact-link-label">OnlineJobs.ph</div>
+              <div class="contact-link-val">View my OJ profile</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="avail-title">
+          <div class="avail-dot"></div>
+          Currently available for hire
+        </div>
+        <div class="platform-list">
+          <div class="platform-row">
+            <span class="platform-name">Upwork</span>
+            <span class="platform-status">OPEN</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name">OnlineJobs.ph</span>
+            <span class="platform-status">OPEN</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name">Indeed</span>
+            <span class="platform-status">OPEN</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name">LinkedIn</span>
+            <span class="platform-status">OPEN TO WORK</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name">Direct / Email</span>
+            <span class="platform-status">AVAILABLE</span>
+          </div>
+        </div>
+        <a href="mailto:stefnvrr@gmail.com" class="btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem;">
+          ✉ &nbsp;Send me a message
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-note">
+      © 2026 Stefanie Nicole Navarro &nbsp;·&nbsp; Built with Claude.ai &nbsp;·&nbsp; Hosted on GitHub Pages &nbsp;·&nbsp; Zambales, Philippines
+    </div>
+  </div>
+</section>
+
+<script>
+// Intersection Observer for fade-up animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.animationPlayState = 'running';
+      e.target.style.opacity = '1';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
+
+// Active service card highlight
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.service-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
