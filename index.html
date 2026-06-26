@@ -90,6 +90,43 @@ nav {
 
 .nav-links a:hover { color: var(--gold); }
 
+  .dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background: white;
+  border: 0.5px solid rgba(28,25,23,0.18);
+  border-radius: 8px;
+  padding: 6px 0;
+  min-width: 180px;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #44403C;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.dropdown-menu li a:hover {
+  background: #FBF5E8;
+  color: #B5813A;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 /* ── Hero ─────────────────────────────────────────────────── */
 .hero {
   min-height: 92vh;
@@ -725,7 +762,7 @@ nav {
     <li><a href="#experience">Experience</a></li>
     <li><a href="#tools">Tools</a></li>
 <li class="dropdown">
-  <a href="#">Portfolio</a>
+  <a href="#portfolio">Portfolio</a>
   <ul class="dropdown-menu">
     <li><a href="ai-portfolio.html" target="_blank">Claude AI</a></li>
     <li><a href="menu-data-entry.html" target="_blank">Menu Data Entry</a></li>
